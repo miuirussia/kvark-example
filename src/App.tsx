@@ -4,8 +4,12 @@ import viteLogo from "./assets/vite.svg";
 import heroImg from "./assets/hero.png";
 import "./App.css";
 
+import { useAtomValue } from "@kdeveloper/kvark/react";
+import { demoAtom } from "./atoms";
+
 function App() {
   const [count, setCount] = useState(0);
+  const demo = useAtomValue(demoAtom);
 
   return (
     <>
@@ -22,7 +26,7 @@ function App() {
           </p>
         </div>
         <button className="counter" onClick={() => setCount((count) => count + 1)}>
-          Count is {count}
+          Count is {count} {demo}
         </button>
       </section>
 
